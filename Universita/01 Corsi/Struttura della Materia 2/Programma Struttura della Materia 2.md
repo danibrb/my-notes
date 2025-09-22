@@ -52,11 +52,11 @@ tags:
 
 ## Materiali di riferimento
 
-[1] G. Grosso and G. Pastori-Parravicini "Solid State Physics", Academic Press (2014). 
-[2] H.Ibach and H Luth "Solid-State Physics, IV Edition, Springer (2009). 
-[3 ] N. Ashcroft and N. Mermin "Solid State Physics, Saunders College Publishing (1976). 
-[4] C. Kittel "Introduzione alla Fisica dello Stato Solido", Casa Editrice Ambrosiana (2008). 
-[5] M. Sassetti, “Fisica della Materia 2”, Appunti (2025).
+- [ ] G. Grosso and G. Pastori-Parravicini "Solid State Physics", Academic Press (2014). 
+- [ ] H.Ibach and H Luth "Solid-State Physics, IV Edition, Springer (2009). 
+- [ ] N. Ashcroft and N. Mermin "Solid State Physics, Saunders College Publishing (1976). 
+- [ ] C. Kittel "Introduzione alla Fisica dello Stato Solido", Casa Editrice Ambrosiana (2008). 
+- [ ] M. Sassetti, “Fisica della Materia 2”, Appunti (2025).
 
 ## Obiettivi personali
 
