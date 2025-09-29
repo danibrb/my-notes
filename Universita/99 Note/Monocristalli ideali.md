@@ -1,4 +1,4 @@
-**Monocristalli ideali**: struttura ordinata di atomi che si ripetono in modo _regolare_ e _periodico_
+struttura ordinata di atomi che si ripetono in modo _regolare_ e _periodico_
 
 Possono presentare delle irregolarità:
 - difetti puntuali:
@@ -9,5 +9,4 @@ Possono presentare delle irregolarità:
 	- dislocazioni
 	- effetti di bordo
 
-Vengono descritti dal [[reticolo di Bravais]] e dalla [[base di atomi]]
-
+Vengono descritti dal [[Reticolo  di Bravais]] e dalla [[Base di atomi]]
