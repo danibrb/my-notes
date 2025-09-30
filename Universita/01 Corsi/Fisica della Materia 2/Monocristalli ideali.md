@@ -9,4 +9,4 @@ Possono presentare delle irregolarità:
 	- dislocazioni
 	- effetti di bordo
 
-Vengono descritti dal [[Reticolo  di Bravais]] e dalla [[Base di atomi]]
+Vengono descritti dal [[Reticolo di Bravais]] e dalla [[Base di atomi]]
