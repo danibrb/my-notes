@@ -15,3 +15,16 @@
 - il volume è $\Omega_c = \vert\mathbf{a}_1\cdot(\mathbf{a}_2\wedge\mathbf{a}_3)\vert$
 - in cristalli 2D l'area è $S_c = \vert\mathbf{a}_1\wedge \mathbf{a}_2\vert$
 - contiene solo un punto reticolare
+
+## 1.21 Classificazione
+
+Si considerano le diverse simmetrie:
+- *traslazionale*, ripetizione periodica
+- *puntuale* 
+	- rotazioni di $2\pi,\ 2\pi/2,\ 2\pi/3,\ 2\pi/4,\ 2\pi/6$ e multipli
+		- !! manca l'angolo di $2\pi/5$ !!
+	- inversioni $\mathbf{r}\rightarrow - \mathbf{r}$
+	- rotoinversioni
+- composizioni delle precedenti
+
+### Reticoli 1D
