@@ -6,7 +6,7 @@
 - $\{n_i\}$ terna di numeri interi
 - devono racchiudere il minor volume possibile
 - la scelta non è univoca
-- ![[fisica della materia 2.png]]
+- ![[vettori primitivi.png]]
 
 [[fisica della materia 2.pdf#page=8&rect=169,114,412,225|fisica della materia 2, p.8]]
 
@@ -28,3 +28,31 @@ Si considerano le diverse simmetrie:
 - composizioni delle precedenti
 
 ### Reticoli 1D
+
+- Esiste un solo tipo di reticolo
+- punti allineati su una retta distanti $a$ , detta *passo reticolare*
+
+![[reticolo 1d.png]]
+
+[[fisica della materia 2.pdf#page=10&rect=176,554,398,596|fisica della materia 2, p.10]]
+
+
+### Reticoli 2D
+
+- Esistono 5 diversi tipi:
+	- obliquo (a)
+	- rettangolare (b)
+	- rettangolare centrato (c)
+	- quadrato (e)
+	- esagonale (d)
+![[reticoli 2d.png]]
+
+[[fisica della materia 2.pdf#page=10&rect=141,240,434,423|fisica della materia 2, p.10]]
+
+### Reticoli 3D
+
+Esistono 14 tipi diversi
+
+![[reticoli 3d.png]]
+
+[[fisica della materia 2.pdf#page=12&rect=142,304,438,707|fisica della materia 2, p.12]]
