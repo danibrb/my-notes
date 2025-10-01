@@ -8,3 +8,7 @@
 
 [[fisica della materia 2.pdf#page=13&rect=164,459,433,559|fisica della materia 2, p.13]]
 
+- si fissa un punto del [[Reticolo di Bravais]] come origine degli assi
+- si definiscono i [[Vettore primitivo]] $\mathbf{a}_i$
+- abbiamo $M
+- *vettori della base*
