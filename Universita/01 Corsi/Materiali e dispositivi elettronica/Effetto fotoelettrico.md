@@ -1,0 +1,1 @@
+Energia degli elettroni emessi proporzionale alla frequenza della luce incidente
