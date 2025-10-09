@@ -15,3 +15,8 @@ da queste due equazioni ottengo
 $$r_n=\dfrac{4\pi\varepsilon_0\hbar^2}{mq^2}n^2$$
 energia dell'elettrone:
 $$E_n=-\dfrac{mq^4}{32\pi^2\varepsilon^2_0\hbar^2}\dfrac{1}{n^2}$$
+l'elettrone risente del potenziale coulombiano con il protone
+$$-\dfrac{\hbar^2}{2m}\nabla^2\psi+V\psi=\varepsilon\psi \qquad V(r)=-\dfrac{1}{4\pi\varepsilon_0}\dfrac{q^2}{r} $$
+simmetria sferica, separo le variabili
+$$\psi=\psi(r,\theta,\varphi)=R_n(r)\Theta_l(\theta)\Phi_m(\varphi)$$
+con $n,l,m$ [[Numero quantico]], inoltre l'elettrone ha [[Spin]] $s=\pm1/2$
