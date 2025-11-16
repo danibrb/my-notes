@@ -53,3 +53,26 @@ inoltre deve soddisfare il [[Teorema di Bloch]]
 
 $$\psi(x+(a+b))=e^{ik(a+b)}\psi(x)$$
 metto insieme e ottengo un sistema di 4 equazioni e 4 incognite
+$$
+\begin{align*}
+A e^{i\alpha a} + B e^{-i\alpha a} &= (C e^{-\beta b} + D e^{\beta b})e^{ik(a+b)} \\
+i\alpha A e^{i\alpha a} - i\alpha B e^{-i\alpha a} &= (C\beta e^{-\beta b} - D\beta e^{\beta b})e^{ik(a+b)}
+\end{align*}
+$$
+il sistema ha una soluzione 
+$$
+\frac{\beta^2 - \alpha^2}{2 \alpha \beta}
+\sinh(\beta b)\sin(\alpha a) + \cosh(\beta b)\cos(\alpha a) = \cos(k a)
+$$
+introduco P, che ==misura l'area della barriera di potenziale==
+$$P=\dfrac{\beta^2ba}{2}$$
+Considero il caso $V_0 \rightarrow \infty$ e $b \rightarrow 0$ allora $\beta >> \alpha$ e $\beta b <<1$, ottengo
+$$\dfrac{P}{\alpha a}\sin(\alpha a) +\cos(\alpha a)=\cos(ka)$$
+risolvo per via grafica
+![[soluzione kronig penney.png]]
+
+[[da livelli a bande 2025.pdf#page=39&rect=154,155,597,342|da livelli a bande 2025, p.39]]
+
+- Ci sono valori di $\alpha a$ che non hanno soluzioni per l'equazione del moto
+- hp valori di energia che non producono moto
+$$\alpha a = \dfrac{\sqrt{2mE}}{\hbar}a$$

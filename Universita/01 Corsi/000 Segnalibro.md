@@ -1,1 +1,1 @@
-materiali per elettronica: pag 37
+materiali per elettronica: pag 40
