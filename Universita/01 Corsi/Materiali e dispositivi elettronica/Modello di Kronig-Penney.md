@@ -36,3 +36,20 @@ $$\begin{cases}
 \end{cases}$$
 impongo continuità della funzione e della derivata prima in x=0 e x=a
 
+per x=0 ho
+$$\begin{align}
+A+B &=C+D \\ 
+i\alpha(A-B) &=\beta(C-D)
+\end{align}$$
+
+per x=a ho
+$$
+\begin{align*}
+A e^{i\alpha a} + B e^{-i\alpha a} &= C e^{\beta a} + D e^{-\beta a} \\
+i\alpha A e^{i\alpha a} - i\alpha B e^{-i\alpha a} &= C\beta e^{\beta a} - D\beta e^{-\beta a}
+\end{align*}
+$$
+inoltre deve soddisfare il [[Teorema di Bloch]]
+
+$$\psi(x+(a+b))=e^{ik(a+b)}\psi(x)$$
+metto insieme e ottengo un sistema di 4 equazioni e 4 incognite
