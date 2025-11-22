@@ -1,7 +1,7 @@
 
 ![[kronig penney.png|500]]
 
-[[da livelli a bande 2025.pdf#page=36&rect=110,367,619,494|da livelli a bande 2025, p.36]]
+[[01 da livelli a bande 2025.pdf#page=36&rect=110,367,619,494|da livelli a bande 2025, p.36]]
 
 - periodo potenziale: a+b $$
 V(x) =
@@ -71,7 +71,7 @@ $$\dfrac{P}{\alpha a}\sin(\alpha a) +\cos(\alpha a)=\cos(ka)$$
 risolvo per via grafica
 ![[soluzione kronig penney.png]]
 
-[[da livelli a bande 2025.pdf#page=39&rect=154,155,597,342|da livelli a bande 2025, p.39]]
+[[01 da livelli a bande 2025.pdf#page=39&rect=154,155,597,342|da livelli a bande 2025, p.39]]
 
 - Ci sono valori di $\alpha a$ che non hanno soluzioni per l'equazione del moto
 - hp valori di energia che non producono moto

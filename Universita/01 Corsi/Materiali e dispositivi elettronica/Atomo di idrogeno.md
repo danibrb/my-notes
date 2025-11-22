@@ -6,7 +6,7 @@
 
 ![[atomo idrogeno.png|200]]
 
-[[da livelli a bande 2025.pdf#page=5&rect=46,233,184,362|da livelli a bande 2025, p.5]]
+[[01 da livelli a bande 2025.pdf#page=5&rect=46,233,184,362|da livelli a bande 2025, p.5]]
 
 $$-\dfrac{q^2}{4\pi\varepsilon_0 r^2} + \dfrac{mv^2}{r}=0 \qquad(1)$$
 

@@ -6,7 +6,7 @@ distinguo due casi attorno all'interfaccia x=0
 
 ![[scatola finita.png|300]]
 
-[[da livelli a bande 2025.pdf#page=7&rect=553,428,714,539|da livelli a bande 2025, p.7]]
+[[01 da livelli a bande 2025.pdf#page=7&rect=553,428,714,539|da livelli a bande 2025, p.7]]
 
 $$(1)\ -\dfrac{\hbar^2}{2m}\nabla^2\psi=E\psi \quad x<0 \Rightarrow \psi=Ae^{ikx}+Be^{-ikx} \Rightarrow k=\sqrt{\dfrac{2mE}{\hbar^2}}$$
 $$(2)\ -\dfrac{\hbar^2}{2m}\nabla^2\psi+V\psi=E\psi \quad x>0 \Rightarrow \dfrac{\partial^2}{\partial x^2}\psi=\dfrac{2m(V_0-E)}{\hbar^2}\psi$$
