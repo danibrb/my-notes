@@ -67,3 +67,10 @@ $$T \gg 27\text{ K}$$
 	- il numero di particelle varia (es crescita)
 #### Diagramma di flusso
 
+1. inizializzazione posizioni e velocità $r_i$ e $v_i$
+2. calcolo forze al tempo t $F_i(t)$
+3. aggiornamento posizioni e velocità al tempo t + dt
+4. output, ritorno al punto 2
+
+- la scelta del passo dt avvient
+
