@@ -92,5 +92,28 @@ $$T \gg 27\text{ K}$$
 - eventualmente si leggono le velocità iniziali da un file $\{v_i(t=0)\}_{i=1,N}$ se disponibili ad esempio da una simulazione precedente
 - se non sono disponibili, le generiamo secondo una distribuzione gaussiana
 - $$g(v)=f(v_x)f(v_y)f(v_z)$$$$f(v_x)=\left( \frac{m}{2\pi k_B T} \right)^{1/2}e^{-\dfrac{mv^2_x}{2k_BT}}$$
-- 
-- 
+- estraiamo con box muller $\vec{v}^{\,BM}_i$
+- si rimuove il moto del centro di massa $$\{\vec{v}^*_i = \vec{v}^{\,BM}_i - \vec{v}^{\,CM}\}_{i=1,N}$$
+- calcoliamo l'energia attuale del sistema $$K^* = \frac{1}{2} m \sum_i v_i^{*2}$$
+- scaliamo le velocità per ottenere l'energia desiderata $$v_i = v_i^* \sqrt{\frac{K}{K^*}}$$
+- l'energia target può essere ottenuta da K = E - U(t=0)
+- nel caso di simulazione NVT $K = \frac{3}{2} N k_B T$
+
+#### 2 Calcolo delle forze
+
+- per un potenziale di coppia, serve un doppio loop, dispendioso a livello computazionale
+- possiamo usare dei trucchi per alleggerire i calcoli
+- terza legge di Newton, sfruttando la simmetria delle forze $\vec{f}_{ij} = -\vec{f}_{ji}$, si dimezza il numero di valutazioni necessarie nel ciclo di calcolo
+- le interazioni a corto raggio decadono rapidamente, introduciamo un *cut-off*
+	- riduciamo il loop interno a un loop con i primi vicini
+
+#### 3 Propagazione della traiettoria
+
+$$r_i(t), v_i(t), \mathbf{F}_i(i) \rightarrow r_i(t + \delta t), v_i(t + \delta t)$$
+- Accuratezza
+	- le predizioni di MD vanno interpretate come statistiche
+- Conservazione dell'energia
+	- piccole fluttuazioni sono ammesse, no drift
+- Efficienza
+	- calcolo delle forze una volta per time step
+- Uso della memoria non esagerato
