@@ -117,3 +117,95 @@ $$r_i(t), v_i(t), \mathbf{F}_i(i) \rightarrow r_i(t + \delta t), v_i(t + \delta 
 - Efficienza
 	- calcolo delle forze una volta per time step
 - Uso della memoria non esagerato
+
+#### 4 Algoritmi di integrazione numerica
+
+#### Eulero
+
+- semplice ma poco preciso
+- si basa sul fatto che velocità e accelerazione rimangono costanti durante il passo di integrazione $\Delta t$
+- $$
+\begin{aligned}
+x_{n+1} &= x_n + v_n \Delta t \\
+v_{n+1} &= v_n + a_n \Delta t
+\end{aligned}
+$$
+##### Caratteristiche
+
+- **Ordine di precisione:** Primo ordine rispetto al tempo ($O(\Delta t)$).
+    
+- **Natura:** Esplicito (il futuro dipende solo dal presente).
+    
+##### Pro & Contro
+
+- **Pro:** Estremamente semplice da capire e da programmare; richiede pochissima memoria.
+    
+- **Contro:** Non conserva l'energia (il sistema tende a "esplodere" o a dissiparsi rapidamente); richiede passi temporali ($\Delta t$) piccolissimi per evitare instabilità catastrofiche.
+
+#### Verlet
+
+- elimina la dipendenza esplicita della velocità per aggiornare le posizioni
+- basato su posizione attuale e precedente
+- Si ottiene combinando le espansioni in serie di Taylor per $x(t + \Delta t)$ e $x(t - \Delta t)$
+- sommando, si eliminano i termini con la velocità $$x_{n+1} = 2x_n - x_{n-1} + a_n \Delta t^2$$
+- Se serve calcolare la velocità (ad esempio per l'energia cinetica), la si stima a posteriori:
+
+$$v_n = \frac{x_{n+1} - x_{n-1}}{2\Delta t}$$
+##### Caratteristiche
+
+- **Ordine di precisione:** Secondo ordine sulle posizioni ($O(\Delta t^2)$).
+    
+- **Natura:** Simplettico (conserva le proprietà geometriche dello spazio delle fasi, garantendo stabilità energetica a lungo termine).
+
+##### Pro & Contro
+
+- **Pro:** Eccellente stabilità a lungo termine; conserva l'energia totale (oscilla attorno a un valore medio senza divergere); calcolo economico.
+    
+- **Contro:** La velocità non è calcolata in sincrono con la posizione (è sfasata); non è auto-partente (per il primo passo serve un altro metodo, come Eulero, per trovare $x_{-1}$).
+
+#### Leapfrog
+
+- posizioni e velocità vengono calcolate alternate, sfalsando di mezzo passo
+
+1. Si calcola la velocità a metà passo:    $$v_{n+1/2} = v_{n-1/2} + a_n \Delta t$$2. Si aggiorna la posizione al passo successivo usando quella velocità:    $$x_{n+1} = x_n + v_{n+1/2} \Delta t$$Per far partire l'algoritmo al tempo zero, si calcola il primo mezzo passo della velocità con: $v_{1/2} = v_0 + a_0 \frac{\Delta t}{2}$.
+
+##### Caratteristiche
+
+- **Ordine di precisione:** Secondo ordine ($O(\Delta t^2)$).
+    
+- **Natura:** Interlacciato e simplettico.
+
+##### Pro & Contro
+
+- **Pro:** Molto stabile e conserva l'energia come il Verlet classico; richiede meno operazioni matematiche per passo rispetto al Velocity Verlet.
+    
+- **Contro:** Posizioni e velocità non sono sincronizzate nello stesso istante temporale. Se serve calcolare l'energia totale (Cinetica + Potenziale) esattamente al tempo $t_n$, bisogna calcolare una velocità fittizia sincronizzata: $v_n = \frac{v_{n-1/2} + v_{n+1/2}}{2}$.
+
+#### Velocity Verlet
+
+È l'evoluzione del metodo di Verlet ed è lo standard de facto nella dinamica molecolare moderna. Risolve il problema del Verlet classico (mancanza di velocità esplicite) e del Leapfrog (sfasamento temporale), mantenendo intatta la stabilità.
+
+##### Come è realizzato (Formule)
+
+Il calcolo avviene in tre fasi distinte all'interno dello stesso ciclo:
+
+1. **Aggiornamento della posizione:**   $$x_{n+1} = x_n + v_n \Delta t + \frac{1}{2} a_n \Delta t^2$$
+    
+2. **Calcolo delle nuove forze/accelerazioni:** Si usa la nuova posizione $x_{n+1}$ per calcolare la nuova accelerazione $a_{n+1}$.
+    
+3. **Aggiornamento della velocità:** $$v_{n+1} = v_n + \frac{1}{2}(a_n + a_{n+1})\Delta t$$
+##### Caratteristiche
+
+- **Ordine di precisione:** Secondo ordine ($O(\Delta t^2)$).
+    
+- **Natura:** Simplettico e sincrono.
+    
+
+##### Pro & Contro
+
+- **Pro:** Posizioni, velocità e accelerazioni sono tutte calcolate _esattamente nello stesso istante temporale_ $t_{n+1}$. Questo rende immediato il calcolo dell'energia e la gestione di forze che dipendono dalla velocità (come l'attrito). Conservazione dell'energia eccellente.
+    
+- **Contro:** Richiede leggermente più memoria rispetto al Verlet standard per memorizzare le accelerazioni del passo precedente e del passo successivo contemporaneamente.
+
+#### 5 Output (NVT ensemble)
+
