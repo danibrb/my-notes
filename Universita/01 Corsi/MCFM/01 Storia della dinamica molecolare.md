@@ -209,3 +209,38 @@ Il calcolo avviene in tre fasi distinte all'interno dello stesso ciclo:
 
 #### 5 Output (NVT ensemble)
 
+- nel sistema microcanonico vogliamo valutare l'energia totale E(t) = K(t) + U(t)
+- con fluttuazioni  dell'ordine di $\Delta E \propto \sqrt{N}$
+- energia mediata nel tempo $$\langle E \rangle = \frac{1}{M} \sum_{i}^{M} E_i$$
+- U viene calcolata durante la routine del calcolo di F per ottimizzare le risorse
+- vogliamo monitorare anche la temperatura
+- se togliamo il moto del cdm, per il teorema di equipartizione abbiamo: $$\frac{1}{2} \sum_{i}^{N} m v_i^2 = \frac{3}{2} (N - 1) k_B T(t)$$
+- con fluttuazioni $\Delta T \propto \frac{T}{\sqrt{N}}$
+- temperatura media nel tempo $$\langle T \rangle = \frac{1}{M} \sum_{i}^{M} T_i$$
+- La temperatura istantanea viene ricavata tramite il teorema di equipartizione dell'energia, avendo rimosso i 3 gradi di libertà del centro di massa :$$T(t) = \frac{2 K(t)}{(3N - 3) k_B}$$
+- la pressione viene calcolata tramite il teorema del viriale $$P(t) = \frac{N k_B T(t)}{V} + \sum_{i}^{N} \mathbf{F}_i(t) \cdot \mathbf{r}_i(t)$$
+- nei sistemi condensati è possibile avere pressioni negative
+- fluttuazioni $\Delta P \propto \frac{P}{\sqrt{N}}$
+- media $$\langle P \rangle = \frac{1}{M} \sum_{i}^{M} P_i$$
+#### 6 Termostati (NVT)
+
+- sono algoritmi che simulano il comportamento di un bagno termico
+- forzano il sistema a fluttuare attorno a una temperatura desiderata
+- posso fare un rescale delle velocità $$v_i = v_i^* \sqrt{\frac{K}{K^*}}$$
+- in modo da raggiungere l'energia cinetica per la temperatura desiderata
+- problema: questo metodo perturba pesantemente le traiettorie del sistema
+##### Berendsen
+
+- accoppiamento debole con un bagno termico $$\frac{dT(t)}{dt} = \frac{T_{target} - T(t)}{\tau}$$
+- $\tau$ rappresenta il tempo caratteristico di accoppiamento termico
+- $$\frac{dT}{dt} = \frac{1}{\tau} \left( T - T^*(t) \right)$$
+- T temperatura target
+- T* temperatura attuale basata sulle velocità dopo aver integrato le equazioni del moto
+- voglio modificare le velocità in modo da avere $$T^*(t + \Delta t) = T^*(t) + \frac{\Delta t}{\tau} \left( T - T^*(t) \right)$$
+- bisogna trovare il corretto fattore di scala $v_i = \lambda v_i^*$
+- la temperatura è proporzionale all'energia cinetica, quindi al quadrato della velocità $$\begin{gather*}
+\lambda^2 = \frac{T^*(t + \Delta t)}{T^*(t)} \\[1em]
+\lambda = \sqrt{1 + \frac{\Delta t}{\tau} \left( \frac{T}{T^*(t)} - 1 \right)}
+\end{gather*}$$
+- pro: stabile e converge velocemente a T
+- contro: non viene riprodotta la distribuzione canonica, le fluttuazioni di T e K sono soppresse
