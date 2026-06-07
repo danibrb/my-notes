@@ -72,5 +72,25 @@ $$T \gg 27\text{ K}$$
 3. aggiornamento posizioni e velocità al tempo t + dt
 4. output, ritorno al punto 2
 
-- la scelta del passo dt avvient
+- la scelta del passo dt avviene tramite un compromesso
+	- troppo piccolo -> si allungano i tempi computazionali
+	- troppo grande -> errori su integrazione che potrebbe divergere
+- di solito si prende 10 volte più piccolo del periodo vibrazionale più veloce del sistema
 
+- Nelle molecole organiche, i moti più rapidi sono associati allo stretching dei legami covalenti leggeri, come i legami carbonio-idrogeno : $\tau_{C-H} \approx 10\text{ fs} \quad \rightarrow \quad \Delta t \le 1\text{ fs}$
+- per l'argon abbiamo $\tau_{Ar} \approx 1.7\text{ ps} \quad \rightarrow \quad \Delta t \le 10\text{ fs}$
+- limite inferiore dovuto alla precisione del formato dei dati
+- singola precisione 32bit -> $10^{-4}$ e $10^{-5}\text{ fs}$
+- doppia precisione 64bit -> $10^{-6}$ e $10^{-8}\text{ fs}$
+- valori tipici di step sono:
+	- 1 - 2 fs per biomolecole
+	- 0.5 - 1 fs per sistemi con alte frequenze vibrazionali (acqua)
+
+#### 1 Inizializzazione
+
+- si leggono le posizioni iniziali da un file $\{r_i(t=0)\}_{i=1,N}$
+- eventualmente si leggono le velocità iniziali da un file $\{v_i(t=0)\}_{i=1,N}$ se disponibili ad esempio da una simulazione precedente
+- se non sono disponibili, le generiamo secondo una distribuzione gaussiana
+- $$g(v)=f(v_x)f(v_y)f(v_z)$$$$f(v_x)=\left( \frac{m}{2\pi k_B T} \right)^{1/2}e^{-\dfrac{mv^2_x}{2k_BT}}$$
+- 
+- 
