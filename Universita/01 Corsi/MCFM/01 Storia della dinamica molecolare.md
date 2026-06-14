@@ -244,3 +244,41 @@ Il calcolo avviene in tre fasi distinte all'interno dello stesso ciclo:
 \end{gather*}$$
 - pro: stabile e converge velocemente a T
 - contro: non viene riprodotta la distribuzione canonica, le fluttuazioni di T e K sono soppresse
+
+##### Bussi-Parrinello, o v-rescale
+
+- corregge i problemi microscopici di Berendsen
+- inserisce un termine stocastico per scalare le velocità
+- andiamo verso la temperatura target conservando le fluttuazioni di K
+- ad ogni passo $\Delta t$ andiamo a effettuare i seguenti passi:
+1. Calcola l'energia cinetica corrente del sistema ($K^*$).
+2. estrae stocasticamente un valore di energia cinetica "bersaglio" ($K$) che rispetti rigorosamente questa distribuzione di probabilità.
+3. distribuzione di Maxwell-Boltzmann trasformata in termini di energia cinetica
+$$P(K) = \frac{2}{\sqrt{\pi}} \frac{K^{1/2}}{(k_B T)^{3/2}} e^{-K/k_B T}$$
+4. Applica il fattore di scala globale $\sqrt{K/K^*}$ a ciascuna componente di velocità di ogni singolo atomo
+5. $$v_i = v_i^* \sqrt{\frac{K}{K^*}}$$
+- $v_i^*$ è la velocità della particella $i$-esima **prima** dell'intervento del termostato.
+- $K^*$ è l'energia cinetica totale del sistema **attuale** (calcolata un istante prima del riscalamento).
+- $K$ è la **nuova** energia cinetica estratta stocasticamente (con l'ausilio della componente stocastica/Wiener vista in precedenza) che tende verso la distribuzione canonica.
+- $v_i$ è la velocità riscalata finale.
+
+##### Andersen
+
+- le particelle possono subire un urto casuale con il bagno termico
+- se succede, viene estratta la velocità dalla distribuzione alla temperatura T
+- definiamo una frequenza di collisione $\eta_c$ 
+- La probabilità che una particella subisca un urto in un $\delta t$ è pari a $p_c(t) = \eta_c \delta t$
+- per ogni particella del sistema, si estrae un numero casuale $r$ distribuito uniformemente tra 0 e 1
+- se $r < \eta_c \delta t$ la particella urta contro il bagno termico e vengono estratte le velocità
+- se $r \ge \eta_c \delta t$ la velocità $v_i(t + \delta t)$ viene calcolata con gli integratori (verlet)
+
+- pro: facile da implementare, ergodico
+- contro: gli urti casuali spezzano la traiettoria, dipendenza critica dal valore di $\eta_c$
+
+##### Langevin
+
+- andiamo ad aggiungere una forza di attrito viscoso e una forza casuale (stocastica) $$m \frac{dv}{dt} = -m \eta_f v + F(x) + \Gamma(t)$$
+- F forza interazione tra particelle
+- $\Gamma$ rumore bianco, gaussiano con media 0 e varianza che dipende dal tempo di autocorrelazione per t=t' $$\langle \Gamma(t) \Gamma(t') \rangle = C \delta(t - t')$$
+- posso sceglierla in modo da ottenere l'equilibrio termodinamico $$C = 2 \eta_f k_B T m$$
+- contro: le equazioni del moto vanno riscritte, traiettorie perturbate più di Andersen
