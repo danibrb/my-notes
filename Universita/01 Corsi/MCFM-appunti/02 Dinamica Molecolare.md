@@ -53,7 +53,7 @@ algoritmo cicla aggiornando posizioni e velocita
 1 e 2 sono comuni a tutti gli ensemble
 3 e 4 sono specifici
 
-**scelta della discretizzazione temporale**
+#### scelta della discretizzazione temporale
 es pot di LJ  O-----O
 $$\text{Ar}: \omega = 3.6 \cdot 10^{12} \text{ s}^{-1} \rightarrow \tau = 1.7 \cdot 10^{-12} \text{ s}$$
 serve un tempo di discretizzazione ad esempio 10 volte piu piccolo
@@ -73,3 +73,86 @@ pero piu è piccolo piu la performance computazionale diminuisce
 c'è anche il limite di errori di precisione numerica
 troppi errori di arrotondamento
 
+#### inizializzazione del sistema
+
+- posizioni iniziali lette da file $\{x_i(t=0)\}_{i=1,N}$
+- velocita da file se disponibili
+se non lo sono? generiamo noi le velocita
+$$\begin{aligned}
+g(v) &= f(v_x) f(v_y) f(v_z) \\[1.5ex]
+f(v_x) &= \left( \frac{m}{2\pi k_B T} \right)^{1/2} e^{-\frac{m v_x^2}{2k_B T}}
+\end{aligned}$$
+
+g è una maxwelliana
+
+estraiamo velocita da una gaussiana usando l'algoritmo di box-muller
+(dispense dinamica molecolare di Ferrando), usando librerie
+N (numero di particelle del sistema da simulare) è finito (38)
+-> il centro di massa ha velocita non nulla (la avrebbe per N -> $\infty$)
+problema numerico: dopo un po non ho piu digits per scrivere i numeri delle velocita (poco pratico)
+-> rimuoviamo il CM ogni volta 
+$$\{\vec{v}_i^* = \vec{v}_i^{BM} - \vec{v}^{CM}\}_{i=1,N}$$
+poi calcolo energia cinetica del sistema ( o T) 
+$$K^* = \frac{1}{2} m \sum_i v_i^{*2}$$
+se quella ottenuta non è quella desiderata, riscalo 
+$$v_i = v_i^* \sqrt{\frac{K}{K^*}}$$
+non è detto che è l'energia cinetica conservata, non K ma E
+simulazione microcanonica  a E e T specifici per ottenere cio K deve essere uguale a E-U energia potenziale
+
+Ora calcoliamo le forze all'istante t
+introduciamo un cut-off distanza oltre la quale non considero l'nterazione tra le molecole
+interazione a coppie (no multicorpi) -> non è un'approssimazione da poco,
+funziona bene su sistemi in fase liquida, meno sui solidi (specialmente i metalli)
+nanoparticelle: decine di atomi di argon
+se fossero atomi di metallo perderei un fenomeno:
+si contraggono i legami di superficie e si espandono quelli interni (dovuto a interazione a multicorpi, dipende da primi vicini)
+è la parte piu dispendiosa computazionalmente
+2 indici per atomo -> 2 loop
+per semplificare:
+- sfrutto principio azione reazione
+- cut off (per 38 atomi non serve)
+
+aggiorniamo ora posizione e velocita delle particelle
+evoluzione a t+dt
+
+Considerazioni:
+accuratezza della dinamica molecolare
+non sara mai precisissima (errori approssimazione numerica)
+$$|\Delta x^2| = \frac{1}{N} \sum_{i=1}^N |x_i(t) - x_i^{ref}(t)|^2$$
+espresso in unita $\sigma$ di Lennard Jones
+le previsioni della dinamica molecolare vanno sempre interpretare in senso statistico
+
+propagatore della traiettoria:
+- accuratezza
+- buona conservazione dell'energia
+- efficiente (una chiamata al calcolo della forza per loop)
+- uso non eccessivo di memoria
+
+vediamo un po di algoritmi di integrazione delle equazioni del moto
+
+#### Eulero
+
+sviluppo di Taylor al secondo ordine
+$$\begin{aligned}
+\vec{x}_i(t+dt) &= \vec{x}_i(t) + \vec{v}_i(t) \delta t + \frac{1}{2} \vec{a}_i(t) \delta t^2 + O(\delta t^3) \\[1.5ex]
+\vec{v}_i(t+dt) &= \vec{v}_i(t) + \vec{a}_i(t) \delta t + O(\delta^2)
+\end{aligned}$$
+problema di questo algoritmo
+non è invariante per inversione temporale (\*)
+se voglio calcolare $\vec{x}_i(t + dt - dt)$ non ottengo $\vec{x}_i(t)$
+$$\begin{aligned}
+\vec{x}_i(t+dt-dt) &= \vec{x}_i(t+dt) - \vec{v}_i(t+dt)dt + \frac{1}{2}\vec{a}_i(t+dt)dt^2 \\[1.5ex]
+&= \vec{x}_i(t) + \vec{v}_i(t)dt + \frac{1}{2}\vec{a}_i(t)dt^2 - \vec{v}_i(t)dt - {} \\[1.5ex]
+&\quad - \vec{a}_i(t)dt^2 + \frac{1}{2}\vec{a}_i(t+dt)dt^2 \neq \vec{x}_i(t)
+\end{aligned}$$
+è associato un drift di energia a questi algoritmi (\*)
+
+#### Verlet
+
+sviluppo al terzo ordine di $\vec{x}_i(t + dt)$ e $\vec{x}_i(t - dt)$
+$$\begin{aligned}
+\vec{x}_i(t+dt) &= \vec{x}_i(t) + \vec{v}_i(t)dt + \frac{1}{2}\vec{a}_i(t)dt^2 + \frac{1}{6}\vec{b}_i(t)dt^3 + O(dt^4) \\[1.5ex]
+\vec{x}_i(t-dt) &= \vec{x}_i(t) - \vec{v}_i(t)dt + \frac{1}{2}\vec{a}_i(t)dt^2 - \frac{1}{6}\vec{b}_i(t)dt^3 + O(dt^4)
+\end{aligned}$$
+sommandoli ottengo l'equazione del propagatore
+$$\vec{x}_i(t+dt) = 2\vec{x}_i(t) - \vec{x}_i(t-dt) + \vec{a}_i(t)dt^2 + O(dt^4)$$
