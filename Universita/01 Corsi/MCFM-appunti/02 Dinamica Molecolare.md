@@ -157,3 +157,91 @@ $$\begin{aligned}
 sommandoli ottengo l'equazione del propagatore
 $$\vec{x}_i(t+dt) = 2\vec{x}_i(t) - \vec{x}_i(t-dt) + \vec{a}_i(t)dt^2 + O(dt^4)$$
 ci servono le posizioni del sistema sia all'istante t che t-dt
+il primo passo di integrazione devo farlo con un altro algoritmo tipo eulero
+il problema di questo algoritmo è che le velocita non sono integrate
+sono solo un output
+$$\vec{v}_i(t) = \frac{\vec{x}_i(t+dt) - \vec{x}_i(t-dt)}{2dt}$$
+brutale derivazione numerica
+per una simulazione nel microcanonico va bene
+nel canonico devo implementare un termostato che modifica le velocita delle particelle
+le modifiche apportate dal termostato non si propagano agli step successivi
+
+verlet è invariante per inversione temporale, conserva l'energia a meno di piccole fluttuazioni
+come posso diminuire le fluttuazioni: riducendo il timestep
+
+#### Leapfrog
+
+salto della cavallina
+$$\begin{aligned}
+\vec{x}_i(t+dt) &= \vec{x}_i(t) + \vec{v}_i\left(t + \frac{dt}{2}\right) dt \\[1.5ex]
+\vec{v}_i\left(t + \frac{dt}{2}\right) &= \vec{v}_i\left(t - \frac{dt}{2}\right) + \vec{a}_i(t) dt
+\end{aligned}$$
+le ho entrambe da integrazione ma a tempi diversi
+???
+$$\vec{v}_i(t) = \frac{1}{2} \left[ \vec{v}_i\left(t + \frac{dt}{2}\right) + \vec{v}_i\left(t - \frac{dt}{2}\right) \right]$$
+anche qua ho bisogno di un primo step di dt/2 fatto in un altro modo
+si dimostra che leapfrog e verlet generano traiettorie identiche
+sono equivalenti
+leapfrog è l'integratore di prima scelta per gromacs
+
+#### velocity verlet
+
+piu accurato di tutti
+$$\begin{align}
+\vec{x}_i(t+dt) &= \vec{x}_i(t) + \vec{v}_i(t)dt + \frac{1}{2}\vec{a}_i(t)dt^2 \tag{1} \\[1.5ex]
+\vec{v}_i(t+dt) &= \vec{v}_i(t) + \frac{1}{2}\left(\vec{a}_i(t) + \vec{a}_i(t+dt)\right)dt \tag{2}
+\end{align}$$
+vediamo l'equivalenza tra verlet e velocity verlet
+scrivo (1) e (2) al tempo t
+$$\left\{
+\begin{aligned}
+\vec{x}_i(t) &= \vec{x}_i(t-dt) + \vec{v}_i(t-dt)dt + \frac{1}{2}\vec{a}_i(t-dt)dt^2 \quad &(*) \\[1.5ex]
+\vec{v}_i(t) &= \vec{v}_i(t-dt) + \frac{1}{2}\left(\vec{a}_i(t-dt) + \vec{a}_i(t)\right)dt
+\end{aligned}
+\right.$$
+
+
+$$\begin{aligned}
+(1) - (*): \quad & \\[1.5ex]
+\vec{x}_i(t+dt) - \vec{x}_i(t) &= \vec{x}_i(t) - \vec{x}_i(t-dt) + dt \left[ \vec{v}_i(t) - \vec{v}_i(t-dt) \right] + {} \\[1.5ex]
+&\quad + \frac{1}{2} \left[ \vec{a}_i(t) - \vec{a}_i(t-dt) \right] dt^2 \\[1.5ex]
+&= \vec{x}_i(t) - \vec{x}_i(t-dt) + \vec{a}_i(t) dt^2 \quad \text{Verlet} \; \checkmark
+\end{aligned}$$
+
+#### output
+
+nel microcanonico:
+- E(t) poi medio le fluttuazioni
+- T(t) con teorema di equipartizione
+- P(t) utile nel ensemble NPT con teorema del viriale
+
+#### teorema del viriale
+
+N particelle interagenti, confinato in $$V: \{\vec{x}_i\}, \{\vec{F}_i\}, \{\vec{p}_i\}$$
+in $\{\vec{F}_i\}$ ci sono gli urti con le pareti e con le particelle
+
+
+$$\dot{\vec{p}}_i = \vec{F}_i$$
+somma del viriale 
+$$G \equiv \sum_i \vec{p}_i \cdot \vec{x}_i$$
+$$\frac{dG}{dt} = \sum_i \left( \underbrace{\dot{\vec{p}}_i \cdot \vec{x}_i}_{\vec{F}_i \cdot \vec{x}_i} + \underbrace{\vec{p}_i \cdot \dot{\vec{x}}_i}_{2K} \right) \Rightarrow \frac{d}{dt} \left( \sum_i \vec{p}_i \cdot \vec{x}_i \right) = 2K + \sum_i \vec{F}_i \cdot \vec{x}_i$$
+media temporale 
+$$\underbrace{\frac{1}{T} \int_0^T \frac{dG}{dt} dt}_{\frac{1}{T} [G(T) - G(0)]} = \langle 2K \rangle + \left\langle \sum_i \vec{F}_i \cdot \vec{x}_i \right\rangle \xrightarrow[T \to \infty]{} 0$$
+$$\text{Poiché } G(t) \text{ è limitato, si ha che il limite per definizione è:}$$
+$$\lim_{T \to \infty} \frac{1}{T} \left[ G(T) - G(0) \right] = 0$$
+per tempi lunghi il teorema del viriale afferma che:
+$$\langle 2K \rangle + \left\langle \sum_i \vec{F}_i \cdot \vec{x}_i \right\rangle = 0$$
+se il sistema è un gas perfetto, le F sono dovute solo agli urti con le pareti (gas non interagente) 
+$$\Rightarrow d\vec{F}_i = -P \hat{n} dA$$
+$$\xrightarrow[\Sigma \to \int]{\text{gas perf.}} -\int_A P \hat{n} \cdot \vec{x} \, dA = -\int_V P (\vec{\nabla} \cdot \vec{x}) \, dV = -3VP \Rightarrow \langle 2K \rangle = 3PV$$
+$$\cancel{3} k_B T = \cancel{3} PV \quad \text{eq.ne gas perfetti}$$
+se il gas non è perfetto ma interagente o un liquido
+$$\sum_i \vec{F}_i \cdot \vec{x}_i = -3PV + \sum_i \vec{F}_i^{\text{int}} \cdot \vec{x}_i \implies \langle 2K \rangle = 3PV - \left\langle \sum_i \vec{F}_i^* \cdot \vec{x}_i \right\rangle$$
+$$\left(\vec{F}_i^* \equiv \vec{F}_i^{\text{int}}\right)$$
+in MD conosco $\vec{F}_i(t), \vec{x}_i(t)$
+allora posso definire la pressione istantanea 
+$$P(t) = \frac{1}{3V} \left( 2K(t) + \sum_i \vec{F}_i^* \cdot \vec{x}_i \right) \implies P = \langle P(t) \rangle$$
+$P(t)$ ha fluttuazioni grandi, $\langle P(t) \rangle$ è stabile
+se voglio controllare $P(t)$ barostato, algoritmo che rimodella il V del contenitore
+N.B. per sistemi condensati il termine dovuto a $\vec{F}_i^*$ è sufficiente a ottenere $P(t) < 0$
+per gas perfetti $P(t) > 0$
