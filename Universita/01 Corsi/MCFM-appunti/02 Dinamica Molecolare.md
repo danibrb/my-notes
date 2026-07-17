@@ -156,3 +156,4 @@ $$\begin{aligned}
 \end{aligned}$$
 sommandoli ottengo l'equazione del propagatore
 $$\vec{x}_i(t+dt) = 2\vec{x}_i(t) - \vec{x}_i(t-dt) + \vec{a}_i(t)dt^2 + O(dt^4)$$
+ci servono le posizioni del sistema sia all'istante t che t-dt
