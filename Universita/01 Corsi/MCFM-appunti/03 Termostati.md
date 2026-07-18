@@ -25,4 +25,16 @@ ma non riusciamo a riprodurre bene le distribuzioni canoniche
 #### termostato di Bussi Parrinello
 
 riscalo $$v_i = v_i^* \sqrt{\frac{K}{K^*}}$$
-ma invece che mettere la K target, la ricavo da $$p(K) = \frac{2}{\sqrt{\pi}} \frac{K^{1/2}}{(k_B T)^{3/2}} e^{-\frac{K}{k_B T}}$$
+ma invece che mettere la K target, la ricavo da $$P(K) = \frac{2}{\sqrt{\pi}} \frac{K^{1/2}}{(k_B T)^{3/2}} e^{-\frac{K}{k_B T}}$$
+
+#### termostato di Andersen
+
+considero che ciascuna particella abbia una certa probabilita di collidere con il bagno termico $$p_c(t) = \eta_c \delta t$$
+se avviene allora la v delle particelle la estraggo dalla distribuzione alla T desisderata
+c'è ancora un problema di convergenza
+bisogna tarare bene $\eta_c$
+$$\langle v(t) v(0) \rangle \propto \exp\left( -\frac{t}{\tau_v} \right)$$
+faccio il plot di questa funzione di correlazione $\langle v(t) v(0) \rangle$ e trovo $\tau_v$ tempo di correlazione
+dovrebbe essere $$\tau_v < \eta_c^{-1}$$
+
+$$10 \frac{\text{m}}{\text{s}} = 10 \cdot 10^{10} \frac{\text{Å}}{\text{s}} = 10^{11} \frac{\text{Å}}{\text{s}} = 10^{11} \frac{\text{Å}}{\cancel{\text{s}}} \cdot \frac{\cancel{\text{s}}}{10^{12} \text{ps}} = 0,1 \frac{\text{Å}}{\text{ps}}$$
