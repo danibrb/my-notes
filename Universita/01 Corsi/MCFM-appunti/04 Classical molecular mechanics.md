@@ -104,3 +104,12 @@ si vede anche il diagramma di fase
 se sono presenti tanti tipi di atomi diversi, parametri di LJ omogenei tra atomi uguali e eterogenei tra quelli diversi
 di solito si assegnano prima quelli omogenei (proprieta target) e quelli eterogenei
 $$\sigma_{AB} = \frac{\sigma_A + \sigma_B}{2} \qquad \varepsilon_{AB} = \sqrt{\varepsilon_A \varepsilon_B}$$
+
+#### acqua
+
+esistono tanti modelli
+consideriamo modelli
+- rigidi (sbarrette rigide tra H e O)
+- non polarizzabili (cariche parziali non cambiano una volta assegnate)
+vediamo due modelli a tre siti di interazione TIP3, SPC/E
+in realta considero LJ solo per O-O
