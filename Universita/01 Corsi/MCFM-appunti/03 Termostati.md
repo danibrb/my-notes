@@ -38,3 +38,46 @@ faccio il plot di questa funzione di correlazione $\langle v(t) v(0) \rangle$ e 
 dovrebbe essere $$\tau_v < \eta_c^{-1}$$
 
 $$10 \frac{\text{m}}{\text{s}} = 10 \cdot 10^{10} \frac{\text{Å}}{\text{s}} = 10^{11} \frac{\text{Å}}{\text{s}} = 10^{11} \frac{\text{Å}}{\cancel{\text{s}}} \cdot \frac{\cancel{\text{s}}}{10^{12} \text{ps}} = 0,1 \frac{\text{Å}}{\text{ps}}$$
+timestep 0,001 ps
+
+per implementare:
+a ogni passo e per ogni particella estraggo un numero 
+se $r < \eta_c \delta t$ estraggo 
+se $r > \eta_c \delta t$ integro con verlet
+$$[\text{eV}] = \frac{1}{2} m v^2 \quad \rightarrow \quad [v^2] = \frac{\text{eV}}{\text{kg}} = \frac{1,6 \cdot 10^{-19} \text{J}}{\text{kg}}$$
+$$1 \frac{\text{m}^2}{\text{s}^2} = \frac{10^{20} \text{Å}^2}{\text{s}^2} \qquad \qquad 1,6 \cdot 10^{-19} \frac{\text{m}^2}{\text{s}^2}$$
+
+
+#### termostato di Langevin
+
+particelle del sistema si muovono in un background caratterizzato da una resistenza viscosa
+
+$$m \frac{dv}{dt} = \underset{\substack{\uparrow \\ \text{termine dissipativo} \\ \text{(attrito viscoso)}}}{-m v \eta_f} + F(x) + \underset{\substack{\uparrow \\ \text{rumore bianco che} \\ \text{compensa la dissipazione} \\ \text{(per cons. e{ }an.)}}}{\Gamma(t)}$$
+si va a toccare l'integratore le equazioni del moto vanno riformulate
+$\Gamma(t)$ segnale distribuito gaussianamente centrato in zero
+la larghezza è data da $C = \Gamma(0) \Gamma(0)$
+$$\langle \Gamma(t) \cdot \Gamma(t') \rangle = C \delta(t - t')$$
+$$C = 2 \eta_f k_B T m$$
+modifica di piu di Andersen la traiettoria del moto
+
+**Barostati** seguono la stessa filosofia
+
+## Implementazione codice MD
+
+- cluster di 38 atomi di AR
+- siamo in un minimo di U
+- U è la somma di interazioni a coppie di LJ
+- unita di misura sul file $\text{Å}$
+a T=0 quel minimo ha probabilita 1 di essere occupato
+a T>0 diminuisce
+
+si puo calcolare $E_{tot} = U_0 + K$ con K da stimare
+Microcanonico: E = costante
+potrei scegliere K tc T= 20K
+- simulazione microcanonico: verifico conservazione dell'energia
+- T costante
+- vediamo transizioni di fase
+- analisi probabilita di cascare dentro al minimo locale piu basso
+
+
+
