@@ -113,3 +113,18 @@ consideriamo modelli
 - non polarizzabili (cariche parziali non cambiano una volta assegnate)
 vediamo due modelli a tre siti di interazione TIP3, SPC/E
 in realta considero LJ solo per O-O
+cariche spaziali su O e su H
+i due modelli hanno parametri molto diversi
+target per parametrizzare
+- densita
+- entalpia di vaporizzazione ($\Delta$H tra molecola nel vuoto e in fase liquida) in un caso si tiene conto dell'energia di costo per la modifica della forma del dipolo
+- angolo di legame
+altri modelli:
+- TIP4P: centro di interazione LJ su O ma carica parziale non proprio su O
+- TIP5P: 5 cariche parziali 2 nuvole elettroniche (q negativa), segue intuizione chimica
+vediamo come riproducono altre proprieta:
+- proprieta interfaccia migliore per SPC/E perche $\sigma$ migliore
+- $\rho \rightarrow$  era target, tutte buone ???
+- $T_{fusione}$ solo TIP5P funziona
+- pendenza della curva di coesistenza solido-liquido $\frac{dp}{dT}$ è sempre negativa (ok) ma con valori molto diversi (TIP5P sbagliatissima)
+non esiste un modello perfetto, ma se teniamo conto di tutta la fisica simuliamo troppo poco (pochi ns)
