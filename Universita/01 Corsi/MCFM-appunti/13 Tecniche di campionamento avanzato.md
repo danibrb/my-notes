@@ -26,4 +26,4 @@ quindi in ogni intervallo ho il contributo di tutte le finestre, ma i valori piu
 
 #### WHAM
 algoritmo che risolve cio
-i
+abbiamo un fattore d'indeterminazione che è una costante
