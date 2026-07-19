@@ -56,5 +56,12 @@ rapporto tra PV e energia termica a disposizione molto piccolo
 (vale per i liquidi non per i gas)
 
 l'energia puo essere una CV? si
-considero energia interna (termine energia cinetica piu potenziale) ed esprimo una probapilita
+considero energia interna (termine energia cinetica piu potenziale) ed esprimo una probabilita p(E)
+$\omega(E)$ densita di probabilita dell'energia
+$\omega(E)dE = \Omega(E)$ probabilita di trovare stato con quell'energia, piu molteplicita (degenerazione)
+
+$e^{-\beta E}$ sfavorisce l'occupazione di stati ad alta energia, mentre la molteplicita no
+complessivamente: cio ci dice che a T diverso da 0 lo stato occupato non è quello a energia minima, ma a un'energia intermedia
+fattore entropico fondamentale
+$$\Delta F = \Delta E - k_B T \ln\left(\frac{\Omega(E_2)}{\Omega(E_1)}\right) = \Delta E - T \Delta S$$
 
