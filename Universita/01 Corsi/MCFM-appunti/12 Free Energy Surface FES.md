@@ -158,4 +158,13 @@ NB sto lavorando nello spazio delle coordinate ridotto CV
 nel caso (a) in x* ho i punti che non rientrano ne in A ne in B
 -> x discrimina bene
 In (b) no pero
-mi metto i
+mi metto in x* e per ciascuna configurazione ho piu simulazioni
+costruisco un istogramma a posteriori che mi dice la probabilita di cascare in A o in B
+![[Pasted image 20260719172214.png]]
+(a) è giusto deve essere piccata in 0.5
+in x* devono avere tutti stessa probabilita di cadere in A o in B
+
+in (b) lo stato di transizione spazia un range in r grande
+qs sappiamo che deve essere legata a quello che succede al solvente (situazione tipica)
+$$F(\xi) = -k_B T \ln P(\xi)$$
+in principio sembrerebbe sufficiente fare 
