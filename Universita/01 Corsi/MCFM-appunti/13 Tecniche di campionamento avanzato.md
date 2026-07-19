@@ -112,4 +112,11 @@ bisogna capire se si sta convergendo al profilo della FE
 effettivamente si perche cambia la profondita delle buche
 1,4 kj/mol circa mezzo kbT 
 usando well tempered
-ogni volta che si deposita in un punto m
+ogni volta che si deposita in un punto nuovo le gaussiane hanno l'altezza di partenza
+figura di convergenza dei profili di FE nei due casi
+la metadinamica well tempered ha oscillazioni piu regolari -> risultato con errore piu piccolo
+con MetaD W-T puo capitare di rimanere dentro una buca per sempre (se h diminuisce troppo in fretta, se $\gamma$ troppo piccolo)
+
+esempio
+studio il dipeptide dell'alanina, ma usando una sola delle CV, non riesco a discriminare bene i due minimi
+la convergenza diventa problematica perche non sto monitorando l'altro grado direzionale ortogonale
