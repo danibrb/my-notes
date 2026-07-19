@@ -93,3 +93,4 @@ $$\begin{aligned}
 &= \Delta H(T_c) + \Delta C_p(T)(T - T_c)
 \end{aligned}$$
 
+$$\Delta S(T) = \Delta S(T_c) + \int_{T_c}^{T} \underbrace{\left( \frac{\partial \Delta S(T)}{\partial T} \right)_p}_{\displaystyle \int_{T_c}^{T} \frac{\partial\Delta C_p(T)}{\partial T} dT} dT \qquad \text{Nota: } \Delta S(T)T = \Delta C_p(T)$$
