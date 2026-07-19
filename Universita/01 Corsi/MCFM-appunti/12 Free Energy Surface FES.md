@@ -145,4 +145,17 @@ cerchiamo CV che siano buona approssimazione della RC ideale
 associa ad ogni punto la probabilita che ciascuna traiettoria che partendo dal punto finisca prima nella buca A che nella B
 ci consente di individuare tutti gli stati dell'insieme di punti nello stesso spazio delle configurazioni a partire dai quali la probabilita di cadere in A o in B è uguale -> **transition state ensemble**
 il TSE piu è grande meglio è
-si puo modificare il TSE e questo modifica il rate di occupazione di
+si puo modificare il TSE e questo modifica il rate di occupazione di una configurazione (importante in fisica della materia anche per i materiali con nuove proprieta)
+il TSE è un punto solo a T=0
+quindi la RC esiste e corrisponde alla committor function, ma come la troviamo?
+possiamo dare una verifica a posteriori se si comporta come committor o no
+
+esempio NaCl
+
+si vedono due scenari diversi della FES (a) e (b)
+Integro lungo $dq_s$ e ottengo due F(x ) molto simili
+NB sto lavorando nello spazio delle coordinate ridotto CV
+nel caso (a) in x* ho i punti che non rientrano ne in A ne in B
+-> x discrimina bene
+In (b) no pero
+mi metto i
