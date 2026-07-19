@@ -111,4 +111,16 @@ gocce solfattante
 
 interazione entalpiche di soluto buone tra acqua e molecole grosse
 (per interazione andrebbero bene)
-fattore entalpico 
+fattore entalpico e entropico dipendono da T
+a T basse vince contributo entalpico -> acqua entra -> struttura foldata favorevole
+(anche contributo entropico ve nella direzione giusta ma non velocemente)
+
+come stimo il fattore entropico?
+
+conoscendo l'energia libera si potrebbe? e come faccio a conoscerla?
+
+esempio
+2 buche con stessa ampiezza lungo x e diverse lungo y (A e B)
+prendiamo x con CV e plottiamo il profilo di energia libera (plot blu)
+per B la buca è piu profonda, dovuta ai contributi ortogonali
+a t costante 
