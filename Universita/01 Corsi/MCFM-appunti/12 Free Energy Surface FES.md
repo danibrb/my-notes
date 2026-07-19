@@ -9,4 +9,7 @@ torniamo alla probabilita di occupazione di una posizione specifica
 voglio ottenere posizione fissa $P(\vec{x})$ integro sui momenti
 
 definizione 
-Zid funzione di partizione del potenziale ideale (no )
+Zid funzione di partizione del potenziale ideale (no U(x))
+separo la parte cinetica (che dipende solo da **p**) da parte potenziale U che dipende da **x**
+
+fattore di normalizzazione 
