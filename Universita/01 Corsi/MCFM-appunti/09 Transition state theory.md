@@ -63,4 +63,12 @@ i = 2 perche 1 è vincolato sostanzialmente
 
 il prefattore ora dipende anche dalle caratteristiche vibrazionali dello stato di transizione, dipende dalla probabilita che quello stato sia occupato
 tanto piu è morbida la forma della PES alla direzione di transizione e tanto piu è favorevole
-un sistema 
+un sistema rea che si muove per agitazione termica, potrebbe cascare nel bacino dell'altro minimo per un'altra strada meno probabile che non è il cammino di energia minima
+colleghiamo cio all'energia libera
+$$\begin{aligned}
+\Delta F &= -k_B T (\ln Z_t - \ln Z_m) \\
+&\Rightarrow k = \frac{k_B T}{h} e^{-\frac{\Delta F}{k_B T}}
+\end{aligned}$$
+la possibilita di attraversare la barriera dipende non solo dall'energia potenziale disponibile ma anche dalla probabilita di accedere ai bacini minimi non per il cammino di energia minima
+bisogna anche considerare il rapporto tra le entropie
+dipendenza da energia libera $\Delta F$ non solo potenzial
