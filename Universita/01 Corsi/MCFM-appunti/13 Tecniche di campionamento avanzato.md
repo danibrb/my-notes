@@ -40,4 +40,14 @@ ricalcola la $P^u(\xi)$ e cosi via
 $$w_i(\xi) = \frac{1}{2} k \left( \xi - \xi_i^{\text{ref}} \right)^2$$
 scelta semplice ma gettonata
 bisogna scegliere bene i parametri
-k deve essere abb
+k deve essere abbastanza grande da campionare la finestra che mi interessa, ma non troppo grande da non avere overlapping, non campionare tutte le finestre adiacenti
+
+esempio
+proteina misfoldata (protofibrilla)
+cv:
+serve una configurazione di partenza che sia al centro della finestra (se no la simulazione esplode)
+una per ciascuna finestra
+steered MD (applico una forza artificiale)
+devo calcolare la probabilita biased -> altezze istogrammi
+questi devono sovrapporsi un po
+grafico vero (istogrammi colorati) dove gli istogrammi sono brutti con poca sovrapposizione -> FE è ripida li 
