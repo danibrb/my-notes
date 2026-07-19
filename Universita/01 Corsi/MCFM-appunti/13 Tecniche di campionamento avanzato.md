@@ -86,4 +86,18 @@ dipende dal range di campionamento della CV in MD classica
 esempio
 
 sistema a singola buca
-dopo 2000 passi raggiungo il regime d
+dopo 2000 passi raggiungo il regime diffusivo
+poi uso potenziale per ricostruire il profilo
+dovrebbe esserci un minimo in zero
+i dati pero sono ancora molto rumorosi
+devo giocare con tempo, altezza h e larghezza $\sigma$ delle gaussiane
+probabilmente la buca non era pazzesca, quindi faccio fatica a vederla cosi
+posso ridurre il rate di deposito e la h
+
+### Metadinamica Well tempered
+
+h=h(t)
+cosi quando sono nella buca è maggior e in cima meno
+ottimizzo un po
+voglio profilo piatto solo in cima
+si puo dimostrare che mentre la metadinamica classica a parte la rugosita, converge all'infinito a $-
