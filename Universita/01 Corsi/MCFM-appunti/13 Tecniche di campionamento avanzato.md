@@ -14,4 +14,12 @@ $\omega_i$ dipende dalla finestra che stiamo campionando
 a noi interessa la probabilita unbiased, noi pero troviamo quella biased
 $$e^{+\dfrac{w_i\big(C(\vec{R})\big)}{k_B T}}$$
 
-è una costante: dipende dalla CV, la 
+è una costante: dipende dalla CV, la $C(\vec{R}) = \xi$ 
+$$P_i^u(\xi) = P_i^b(\xi) e^{\dfrac{w_i(\xi)}{k_B T}} \frac{\int \dots}{\int \dots}$$
+media secondo la distribuzione unbiased
+$$F_i(\xi) = -k_B T \ln P_i^u(\xi) = -k_B T \ln P_i^b(\xi) - w_i(\xi) + C_i$$
+con Ci offset che non conosciamo
+![[Pasted image 20260719180027.png]]
+serve una procedura che ci aiuti a raccordare i pezzo tra loro (serve continuita)
+questa pero è la versione semplificata: noi in ogni finestra otteniamo un profilo completo, non solo nell'intervallo
+quindi in 
