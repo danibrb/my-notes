@@ -34,5 +34,13 @@ ci servono dei descrittori
 
 ## variabile collettiva CV
 
-la chiamo $\$ 
+la chiamo $\xi$ 
+funzione delle coordinate del sistema
+la definizione di una CV corrisponde a un diminuzione della dimensione dello spazio
+$I_\xi$ intervallo di valori assunti da $\xi$
+NaCl
+$I_{\xi_1}$ bacino stato slegato
+$I_{\xi_2}$ bacino stato legato
+
+
 
