@@ -73,4 +73,17 @@ le gaussiane sono centrate nel valore della CV a cui si trovava quando è stato 
 grafico 
 regime diffusivo: ho depositato gaussiane in tutte le buche e posso andare in tutti i minimi 
 per ricostruire il bias serve ?? $$\lim_{t \to \infty} \omega_G(\xi, t) = -F(\xi) + c$$
-le gaussiane non devono essere troppo gra
+le gaussiane non devono essere troppo grandi (altrimenti profilo rugoso, creo barriere)
+ne troppo piccoli se no ci metto una vita (vario l'altezza)
+il rate di deposito?
+il sistema si muove nello spazio della CV molto piu lentamente che nello spazio delle coordinate delle sue vibrazioni tipiche
+il tempo caratteristico con cui confrontarsi è il tempo di diffusione della CV
+spesso io non so quanto sia profonda la buca di potenziale, stimo un po, approccio empirico
+quanto ampia deve essere la larghezza della gaussiana?
+dipende dal range di campionamento della CV in MD classica
+(piu è piccolo e piu puo essere piccola $\sigma$)
+
+esempio
+
+sistema a singola buca
+dopo 2000 passi raggiungo il regime d
