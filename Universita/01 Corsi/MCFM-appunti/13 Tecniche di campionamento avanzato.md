@@ -56,4 +56,12 @@ effettivamente usando WHAM viene come ci aspettavamo
 stato aggregato, molto stabile favorito
 se volessimo sapere contributo entropico dovremmo calcolare a 2 T diverse
 
-##
+### Metadinamica
+
+il bias dipenda dal tempo e ha memoria
+metafora: tizio ubriaco casca in piscina, vorrebbe uscire ma non trova le scale, ma ha una sorgente infinita di sabbia
+riempie il fondo della piscina di sabbia dove cammina
+il livello si alza puo uscire
+la sabbia ricostruisce anche il profilo della piscina
+sabbia <-> potenziale di bias
+è fatto da gaussiane
