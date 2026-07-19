@@ -71,4 +71,4 @@ $$\begin{aligned}
 \end{aligned}$$
 la possibilita di attraversare la barriera dipende non solo dall'energia potenziale disponibile ma anche dalla probabilita di accedere ai bacini minimi non per il cammino di energia minima
 bisogna anche considerare il rapporto tra le entropie
-dipendenza da energia libera $\Delta F$ non solo potenzial
+dipendenza da energia libera $\Delta F$ non solo potenziale
