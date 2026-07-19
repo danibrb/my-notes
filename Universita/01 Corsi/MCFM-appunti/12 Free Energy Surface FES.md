@@ -130,4 +130,15 @@ infatti $\Delta U$  puo essere molto piu piccolo rispetto a U totale (segnale pi
 posso stimare FES a due T diverse (assumendo che U e S non dipendano tanto da T)
 $$\Rightarrow \Delta S(x) \simeq -\frac{\partial \Delta F(x,T)}{\partial T}$$
 ricostruiamo la FES con i metodi computazionali che abbiamo
-variabile collettiva: qualunque funzione 
+**variabile collettiva:** 
+- qualunque funzione dei dof del sistema che possiamo usare per ridurre la dimensionalità del sistema
+- deve distinguere configurazioni sulla FES 
+- non sempre è continua (ma computazionalmente non è un problema)
+**coordinata di reazione:**
+- è una CV che ci da informazioni sul meccanismo con cui il sistema passa da una configurazione a un'altra
+- cattura l'avanzamneto della transizione di fase
+- ci dice quanto siamo distanti dalla meta
+- non è facile identificare un buona RC
+cerchiamo CV che siano buona approssimazione della RC ideale
+
+**Commi**
