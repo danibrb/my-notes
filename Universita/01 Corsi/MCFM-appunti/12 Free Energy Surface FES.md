@@ -167,4 +167,4 @@ in x* devono avere tutti stessa probabilita di cadere in A o in B
 in (b) lo stato di transizione spazia un range in r grande
 qs sappiamo che deve essere legata a quello che succede al solvente (situazione tipica)
 $$F(\xi) = -k_B T \ln P(\xi)$$
-in principio sembrerebbe sufficiente fare 
+in principio sembrerebbe sufficiente fare una simulazione di MD per un lungo tempo ma in MD le transizioni lente non si riescono a catturare (non rispetta principio ergodico)
