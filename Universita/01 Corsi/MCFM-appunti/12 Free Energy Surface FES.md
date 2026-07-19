@@ -65,3 +65,18 @@ complessivamente: cio ci dice che a T diverso da 0 lo stato occupato non è quel
 fattore entropico fondamentale
 $$\Delta F = \Delta E - k_B T \ln\left(\frac{\Omega(E_2)}{\Omega(E_1)}\right) = \Delta E - T \Delta S$$
 
+$T \Delta S$ fattore entropico legato a conta degli stati
+
+esempio 1
+folding a T alta di una proteina globulare
+esiste una configurazione funzionale per cui la proteina puo svolgere funzioni biologiche
+differenza di energia tra stati 20-60 kJ/mol 
+10/20 volte piu grande dell'energia termica, non esagerata
+equilibrio delicato
+se $\Delta G=0$ 50% folded 50% disordine
+al variare della T $\Delta G>0$ o $\Delta G<0$
+
+denaturazione a freddo
+
+unfolding, perdita struttura nativa anche a T bassa
+succede perche $\Delta G$ di unfolding 
