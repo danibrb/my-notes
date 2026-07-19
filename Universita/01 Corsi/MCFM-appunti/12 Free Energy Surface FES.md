@@ -98,4 +98,17 @@ $$\begin{aligned}
 \Delta S(T) &= \frac{\Delta H(T_c)}{T_c} + \int_{T_c}^{T} \Delta C_p \, d(\ln T) = \frac{\Delta H(T_c)}{T_c} + \Delta C_p \ln\left(\frac{T}{T_c}\right) \\[1.5ex]
 \Rightarrow \Delta G(T) &= \frac{T_c - T}{T_c} \Delta H(T_c) + (T - T_c) \Delta C_p - T \Delta C_p \ln\left(\frac{T}{T_c}\right)
 \end{aligned}$$
-tutte quantita misurabili sperimentalemente abbas
+tutte quantita misurabili sperimentalmente abbastanza facilmente
+ricaviamo andamento $\Delta G$ in funzione di T
+c'è una denaturazione anche a T basse -20 -30 C
+non in acqua pura se no si ghiaccia
+microscopicamente non si capisce pero perche succede cio
+
+papaer di simulazione bidimensionale
+effetto idrofobico
+regione entropica
+gocce solfattante
+
+interazione entalpiche di soluto buone tra acqua e molecole grosse
+(per interazione andrebbero bene)
+fattore entalpico 
