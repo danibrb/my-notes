@@ -93,4 +93,8 @@ $$\begin{aligned}
 &= \Delta H(T_c) + \Delta C_p(T)(T - T_c)
 \end{aligned}$$
 
-$$\Delta S(T) = \Delta S(T_c) + \int_{T_c}^{T} \underbrace{\left( \frac{\partial \Delta S(T)}{\partial T} \right)_p}_{\displaystyle \int_{T_c}^{T} \frac{\partial\Delta C_p(T)}{\partial T} dT} dT \qquad \text{Nota: } \Delta S(T)T = \Delta C_p(T)$$
+$$\Delta S(T) = \Delta S(T_c) + \int_{T_c}^{T} \underbrace{\left( \frac{\partial \Delta S(T)}{\partial T} \right)_p}_{\displaystyle \int_{T_c}^{T} \frac{\partial\Delta C_p(T)}{\partial T} \frac{1}{T} dT} dT \qquad \text{Nota: } \Delta S(T) \cdot T = \Delta C_p(T)$$
+$$\begin{aligned}
+\Delta S(T) &= \frac{\Delta H(T_c)}{T_c} + \int_{T_c}^{T} \Delta C_p \, d(\ln T) = \frac{\Delta H(T_c)}{T_c} + \Delta C_p \ln\left(\frac{T}{T_c}\right) \\[1.5ex]
+\Rightarrow \Delta G(T) &= \frac{T_c - T}{T_c} \Delta H(T_c) + (T - T_c) \Delta C_p - T \Delta C_p \ln\left(\frac{T}{T_c}\right)
+\end{aligned}$$
