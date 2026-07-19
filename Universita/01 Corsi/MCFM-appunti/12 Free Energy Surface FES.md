@@ -123,4 +123,11 @@ esempio
 2 buche con stessa ampiezza lungo x e diverse lungo y (A e B)
 prendiamo x con CV e plottiamo il profilo di energia libera (plot blu)
 per B la buca è piu profonda, dovuta ai contributi ortogonali
-a t costante 
+a T costante 
+$$\Delta S(x) = \frac{1}{T} \Big( \Delta U(x) - \Delta F(x) \Big)$$
+problema : computazionalmente è difficile dare una stima del $\Delta U$ mentre $\Delta F$ è piu facile
+infatti $\Delta U$  puo essere molto piu piccolo rispetto a U totale (segnale piccolo e grandi fluttuazioni)
+posso stimare FES a due T diverse (assumendo che U e S non dipendano tanto da T)
+$$\Rightarrow \Delta S(x) \simeq -\frac{\partial \Delta F(x,T)}{\partial T}$$
+ricostruiamo la FES con i metodi computazionali che abbiamo
+variabile collettiva: qualunque funzione 
