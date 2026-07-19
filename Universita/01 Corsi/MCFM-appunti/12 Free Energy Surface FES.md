@@ -141,4 +141,8 @@ ricostruiamo la FES con i metodi computazionali che abbiamo
 - non è facile identificare un buona RC
 cerchiamo CV che siano buona approssimazione della RC ideale
 
-**Commi**
+**Committor function**:
+associa ad ogni punto la probabilita che ciascuna traiettoria che partendo dal punto finisca prima nella buca A che nella B
+ci consente di individuare tutti gli stati dell'insieme di punti nello stesso spazio delle configurazioni a partire dai quali la probabilita di cadere in A o in B è uguale -> **transition state ensemble**
+il TSE piu è grande meglio è
+si puo modificare il TSE e questo modifica il rate di occupazione di
