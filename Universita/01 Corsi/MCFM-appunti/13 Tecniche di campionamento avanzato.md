@@ -100,4 +100,16 @@ h=h(t)
 cosi quando sono nella buca è maggior e in cima meno
 ottimizzo un po
 voglio profilo piatto solo in cima
-si puo dimostrare che mentre la metadinamica classica a parte la rugosita, converge all'infinito a $-
+si puo dimostrare che mentre la metadinamica classica a parte la rugosita, converge all'infinito a $-F(\xi$) con questa si converge alla F per un fattore che pero è noto (bias factor)
+
+esempio
+ci sono due minimi
+è uno spazio 2D a 2CV
+vediamo di fare metadinamica
+gromacs e plumed
+c'è uno shift verticale delle curve dovuto al fatto che continuo ad aggiungere bias
+bisogna capire se si sta convergendo al profilo della FE
+effettivamente si perche cambia la profondita delle buche
+1,4 kj/mol circa mezzo kbT 
+usando well tempered
+ogni volta che si deposita in un punto m
