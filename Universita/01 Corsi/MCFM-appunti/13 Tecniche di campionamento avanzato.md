@@ -64,4 +64,13 @@ riempie il fondo della piscina di sabbia dove cammina
 il livello si alza puo uscire
 la sabbia ricostruisce anche il profilo della piscina
 sabbia <-> potenziale di bias
-è fatto da gaussiane
+è fatto da gaussiane che esercitano ina F che spinge il sistema lontano dalla posizione in cui si trova
+una volta che è stato depositato, il potenziale resta li, history dependent
+le gaussiane sono definite nello spazio della CV
+sono depositate a intervalli regolari 
+le gaussiane sono centrate nel valore della CV a cui si trovava quando è stato depositato il potenziale
+
+grafico 
+regime diffusivo: ho depositato gaussiane in tutte le buche e posso andare in tutti i minimi 
+per ricostruire il bias serve ?? $$\lim_{t \to \infty} \omega_G(\xi, t) = -F(\xi) + c$$
+le gaussiane non devono essere troppo gra
