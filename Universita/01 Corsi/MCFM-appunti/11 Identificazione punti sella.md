@@ -57,4 +57,13 @@ la parte di forza della molla prendo solo la componente parallela
 avendo minimo e punto sella, riesco a simulare dinamica, evoluzione temporale?
 con MD ho un rate troppo basso, ci metto troppo tempo
 kinetic MC aggiorna il t in modo furbo
-sono nell'iesimo minimo locale, cerco tutti i minimi j a
+sono nell'iesimo minimo locale, cerco tutti i minimi j accessibili attraversando un solo punto sella
+con TST calcoliamo transition rate ri->j
+$$r_{\text{tot}} = \sum_{i=1}^{N} r_i$$
+rtot lo scompongo nei contributi dovuti ai possibili punti sella
+con una probabilita $\alpha$ al rate seleziono un punto sella
+aggiorno la configurazione e avanzo il tempo dell'inverso del rate tot (o del rate della particella)
+
+esempio problema di diffusione
+![[Pasted image 20260719144754.png]]
+ai gradini si posso
