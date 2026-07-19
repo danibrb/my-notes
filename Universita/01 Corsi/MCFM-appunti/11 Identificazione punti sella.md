@@ -43,4 +43,18 @@ forze 2 contributi di potenziale:
 - quello che determina la pEs
 - quello per le molle
 due regimi
-- k molto dure: non riesco ad allungare i legami
+- k molto dure: non riesco ad allungare i legami, devio abbastanza presto dal MEP
+- k molto molla: molla si allunga troppo, non campiono piu il punto sella
+serve un compromesso
+
+### nudged elastic band 
+
+non prendo tutta la forza vera ma solo la componente ortogonale alla direzione scelta -> processo iterativo
+la parte di forza della molla prendo solo la componente parallela
+
+### kinetic monte carlo 
+
+avendo minimo e punto sella, riesco a simulare dinamica, evoluzione temporale?
+con MD ho un rate troppo basso, ci metto troppo tempo
+kinetic MC aggiorna il t in modo furbo
+sono nell'iesimo minimo locale, cerco tutti i minimi j a
