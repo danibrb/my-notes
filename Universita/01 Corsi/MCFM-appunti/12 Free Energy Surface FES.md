@@ -79,4 +79,17 @@ al variare della T $\Delta G>0$ o $\Delta G<0$
 denaturazione a freddo
 
 unfolding, perdita struttura nativa anche a T bassa
-succede perche $\Delta G$ di unfolding 
+succede perche $\Delta G$ di unfolding $$\Delta G_u = G_u - G_f$$
+se <0 unfolding piu probabile
+$$\begin{aligned}
+\Delta G(T_c) &= \Delta H(T_c) - T_c \Delta S(T_c) = 0 \\
+&\Rightarrow \Delta S(T_c) = \frac{\Delta H(T_c)}{T_c}
+\end{aligned}$$
+Tc temperatura di transizione
+espandiamo $\Delta G_u$
+$$\begin{aligned}
+\Delta H(T) &= \Delta H(T_c) + \int_{T_c}^{T} \Delta C_p(T) \, dT \qquad \Delta C_p(T) = \left( \frac{\partial \Delta H(T)}{\partial T} \right)_p \\[1ex]
+&\text{(se } \Delta C_p(T) \text{ cost.)} \\[1.5ex]
+&= \Delta H(T_c) + \Delta C_p(T)(T - T_c)
+\end{aligned}$$
+
