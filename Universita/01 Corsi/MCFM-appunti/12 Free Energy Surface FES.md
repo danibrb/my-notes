@@ -21,4 +21,13 @@ Z &= Z_{\text{id}} Z_{\text{conf}}
 per $P(\vec{x})$ non integro sulle posizioni perche voglio una posizione specifica
 $$P(\vec{x}) = \frac{e^{-\beta U(\vec{x})}}{Q}$$probabilita del singolo stato
 per sfruttare concetto di energia libera mi devo riferire a un insieme statistico di configurazioni (non 1) a cui posso associare un'energia libera
-problema di c
+problema di occupazione di un bacino / funnel (insieme di stati che raggruppiamo sulla base di qualche criterio)
+probabilita di occupazione di un bacino
+$$P_\Omega = \frac{Q_\Omega}{Q} = \frac{Z_\Omega}{Z_{\text{conf}}}$$
+cerchiamo di scriverlo in funzione dell'energia libera
+probabilita di occupazione relativa tra i due minimi
+$$\frac{P_{\Omega_1}}{P_{\Omega_2}} = e^{-\beta \Delta F}$$
+mi dice dove mi aspetto di trovare il sistema all'equilibrio
+
+come definisco il bacino?
+ci servono dei descrittori
