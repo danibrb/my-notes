@@ -27,3 +27,17 @@ quindi in ogni intervallo ho il contributo di tutte le finestre, ma i valori piu
 #### WHAM
 algoritmo che risolve cio
 abbiamo un fattore d'indeterminazione che è una costante
+$$P^u(\xi) = \sum_i p_i(\xi) P_i^u(\xi)$$
+pi mi pesa la finestra con maggior contributo
+come trovo i pesi
+finestra iesima colleziono Ni campioni
+peso = valore atteso del suo istogramma / somma sui valori attesi degli istogrammi delle altre finestre (possono esserci contributi nulli)
+
+H altezza delle barre degli istogrammi
+WHAM utilizza una procedura iterativa per risolvere il problema che non conosciamo <>u
+all'inizio assegna valori casuali tipo 1 poi trova $P^u(\xi)$ e si ricava la <>u
+ricalcola la $P^u(\xi)$ e cosi via
+$$w_i(\xi) = \frac{1}{2} k \left( \xi - \xi_i^{\text{ref}} \right)^2$$
+scelta semplice ma gettonata
+bisogna scegliere bene i parametri
+k deve essere abb
