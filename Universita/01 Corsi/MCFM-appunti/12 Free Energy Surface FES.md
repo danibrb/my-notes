@@ -31,3 +31,8 @@ mi dice dove mi aspetto di trovare il sistema all'equilibrio
 
 come definisco il bacino?
 ci servono dei descrittori
+
+## variabile collettiva CV
+
+la chiamo $\$ 
+
