@@ -41,6 +41,20 @@ $I_\xi$ intervallo di valori assunti da $\xi$
 NaCl
 $I_{\xi_1}$ bacino stato slegato
 $I_{\xi_2}$ bacino stato legato
+![[Pasted image 20260719155836.png]]
 
+$$\Delta F(I_{\xi_1}, I_{\xi_2}) > 0$$
+come mai c'è una barriera tra i due stati?
+da legato a slegato: forza di coulomb
+da slegato a legato: forza di coulomb / van der waals con gli altri ioni
 
+barriera di disidratazione
+l'informazione del profilo della FES tiene quindi conto anche di altri gradi di liberta (quelli del solvente)
+
+tra NVT o NPT non cambia molto: PV piccolo
+rapporto tra PV e energia termica a disposizione molto piccolo
+(vale per i liquidi non per i gas)
+
+l'energia puo essere una CV? si
+considero energia interna (termine energia cinetica piu potenziale) ed esprimo una probapilita
 
