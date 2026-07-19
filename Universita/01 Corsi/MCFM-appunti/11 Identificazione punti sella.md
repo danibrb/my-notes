@@ -66,4 +66,7 @@ aggiorno la configurazione e avanzo il tempo dell'inverso del rate tot (o del ra
 
 esempio problema di diffusione
 ![[Pasted image 20260719144754.png]]
-ai gradini si posso
+ai gradini si possono essere accumuli di adatomi ???
+
+esempio sintering (coalescenza di due particelle)
+serve alta T, parziale melting solo della superficie
