@@ -22,4 +22,8 @@ con Ci offset che non conosciamo
 ![[Pasted image 20260719180027.png]]
 serve una procedura che ci aiuti a raccordare i pezzo tra loro (serve continuita)
 questa pero è la versione semplificata: noi in ogni finestra otteniamo un profilo completo, non solo nell'intervallo
-quindi in 
+quindi in ogni intervallo ho il contributo di tutte le finestre, ma i valori piu attendibili sono quelli che sono maggiormente campionati in quell'intervallo
+
+#### WHAM
+algoritmo che risolve cio
+i
