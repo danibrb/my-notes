@@ -27,4 +27,20 @@ ma li tengo uniti da molle
 le configurazioni sono legate da potenziale armonico (delle forze che agiscono sulle coordinate di ciascun atomo) alle configurazioni precedente e successiva
 
 esempio
-sistema a tre
+sistema a tre particelle
+A e C fisse nello spazio, B puo muoversi nel piano e formare un legame con A o C
+
+![[Pasted image 20260719143452.png]]
+
+nella PES regioni piatte sono i minimi
+minimo di rab mi muovo in quella corona (cambia solo rbc)
+minimo di rbc, uguale per C e A invertite
+non sono completamente simmetriche
+come trovo punto sella?
+punto in cui passo da sfera A a sfera di int con C
+faccio minimizzazione
+forze 2 contributi di potenziale:
+- quello che determina la pEs
+- quello per le molle
+due regimi
+- k molto dure: non riesco ad allungare i legami
