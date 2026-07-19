@@ -50,4 +50,10 @@ una per ciascuna finestra
 steered MD (applico una forza artificiale)
 devo calcolare la probabilita biased -> altezze istogrammi
 questi devono sovrapporsi un po
-grafico vero (istogrammi colorati) dove gli istogrammi sono brutti con poca sovrapposizione -> FE è ripida li 
+grafico vero (istogrammi colorati) dove gli istogrammi sono brutti con poca sovrapposizione -> FE è ripida li ($\xi$ piccola istogramma verde e marrone)
+dove c'è parabola perfetta -> andamento piatto della FE
+effettivamente usando WHAM viene come ci aspettavamo
+stato aggregato, molto stabile favorito
+se volessimo sapere contributo entropico dovremmo calcolare a 2 T diverse
+
+##
